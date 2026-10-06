@@ -12,7 +12,7 @@ import { hasCv } from "@/lib/cv";
 // sidebar moves, so it keeps to the right margin.
 export default function Home() {
   return (
-    <div className="@container px-[30px] pt-8 pb-12 xl:grid xl:grid-cols-[repeat(12,minmax(0,calc((1380px-220px)/12)))] xl:items-baseline xl:gap-x-5 xl:pt-12">
+    <div className="@container px-5 pt-5 pb-8 md:px-[30px] md:pt-8 md:pb-12 xl:grid xl:grid-cols-[repeat(12,minmax(0,calc((1380px-220px)/12)))] xl:items-baseline xl:gap-x-5 xl:pt-12">
       <header className="pb-12 xl:col-span-7 xl:col-start-3">
         <h1 className="text-title">
           Tomas Jefanovas

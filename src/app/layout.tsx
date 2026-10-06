@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import localFont from "next/font/local";
 import { profile, siteUrl } from "@/content";
 import "./globals.css";
 
-const geistSans = Geist({
+// Self-hosted Geist (SIL OFL, see fonts/OFL.txt), subset to Latin, punctuation
+// and arrows. Google's Latin subset has no ↗, which phones then draw as an emoji.
+const geistSans = localFont({
+  src: "./fonts/Geist-Variable.woff2",
+  weight: "100 900",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
 });
 
 const title = "Tomas Jefanovas — Development and design";
 
 // Link previews matter more than search here: the site is shared by URL, not found.
-// The preview image and icons come from opengraph-image.png and icon.png in this folder.
+// The preview image and icons come from opengraph-image.png, icon.svg and favicon.ico here.
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,

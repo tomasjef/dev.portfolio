@@ -27,7 +27,8 @@ export function TextLink({ arrow, tone = "ink", className = "", children, ...pro
       <span className="underline decoration-from-font [text-underline-position:from-font]">
         {children}
       </span>
-      {arrow && <>&nbsp;{arrow}</>}
+      {/* U+FE0E asks for the text glyph, never the emoji */}
+      {arrow && <>&nbsp;{arrow}&#xFE0E;</>}
     </a>
   );
 }
