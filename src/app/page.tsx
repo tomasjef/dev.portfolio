@@ -1,10 +1,10 @@
+import { ContactBlock } from "@/components/ContactBlock";
 import { JobEntry } from "@/components/JobEntry";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Section } from "@/components/Section";
 import { Sidebar } from "@/components/Sidebar";
 import { TextLink } from "@/components/TextLink";
 import { contact, jobs, profile, projects } from "@/content";
-import { hasCv } from "@/lib/cv";
 
 // Spacing: 12–16 within an item; 48 between every block (items, sections, header, footer).
 // xl layout follows the Figma 1440 frame: 12 columns, 30px margins, 20px gutters.
@@ -18,34 +18,8 @@ export default function Home() {
           Tomas Jefanovas
           <span className="block text-muted">Development and design</span>
         </h1>
-        {/* On desktop the sidebar carries these; on smaller screens it sits at the very end */}
-        <ul className="mt-4 xl:hidden">
-          <li>
-            <TextLink href={`mailto:${contact.email}`}>{contact.email}</TextLink>
-          </li>
-          <li>
-            <TextLink href={contact.github} arrow="↗">
-              GitHub
-            </TextLink>
-          </li>
-          <li>
-            <TextLink href={contact.linkedin} arrow="↗">
-              LinkedIn
-            </TextLink>
-          </li>
-          <li>
-            <TextLink href={contact.designPortfolio} arrow="↗">
-              Design portfolio
-            </TextLink>
-          </li>
-          {hasCv && (
-            <li>
-              <TextLink href={contact.cv} arrow="↓" download>
-                CV
-              </TextLink>
-            </li>
-          )}
-        </ul>
+        {/* Below xl Contact sits here; on desktop it heads the sidebar */}
+        <ContactBlock className="mt-6 xl:hidden" />
       </header>
 
       <main className="flex flex-col gap-y-12 xl:col-span-9 xl:row-start-2 xl:grid xl:grid-cols-subgrid xl:content-start">

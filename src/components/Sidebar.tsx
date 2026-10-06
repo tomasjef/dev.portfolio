@@ -1,31 +1,18 @@
 import { contact, education, skills } from "@/content";
 import { hasCv } from "@/lib/cv";
+import { ContactBlock } from "./ContactBlock";
 import { TextLink } from "./TextLink";
 
 // xl: single column beside the main content. The box hugs its longest line and
 // sits against the right page margin; the text inside stays left-aligned.
 // Phones: one running column at the end of the page; tablets: three columns.
+// Below xl, Contact moves up under the name instead (ContactBlock).
 export function Sidebar({ className = "" }: { className?: string }) {
   return (
     <aside
       className={`grid max-w-[680px] grid-cols-1 gap-x-5 gap-y-[1lh] text-muted md:grid-cols-3 xl:flex xl:w-fit xl:flex-col xl:justify-self-end ${className}`}
     >
-      <div>
-        <h2 className="text-ink">Contact</h2>
-        <p>{contact.location}</p>
-        <TextLink className="block" tone="muted" href={`mailto:${contact.email}`}>
-          {contact.email}
-        </TextLink>
-        <TextLink className="block" tone="muted" href={contact.github} arrow="↗">
-          GitHub
-        </TextLink>
-        <TextLink className="block" tone="muted" href={contact.linkedin} arrow="↗">
-          LinkedIn
-        </TextLink>
-        <TextLink className="block" tone="muted" href={contact.designPortfolio} arrow="↗">
-          Design portfolio
-        </TextLink>
-      </div>
+      <ContactBlock className="hidden xl:block" />
 
       {skills.map(({ heading, items }) => (
         <div key={heading}>
