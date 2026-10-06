@@ -39,7 +39,7 @@ export function Sidebar({ className = "" }: { className?: string }) {
       </div>
 
       {hasCv && (
-        <TextLink className="col-span-full text-ink" href={contact.cv} arrow="↓" download>
+        <TextLink className="col-span-full text-ink" href={contact.cv} download>
           Download CV
         </TextLink>
       )}

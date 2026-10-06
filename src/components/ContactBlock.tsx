@@ -11,13 +11,13 @@ export function ContactBlock({ className = "" }: { className?: string }) {
       <TextLink className="block" tone="muted" href={`mailto:${contact.email}`}>
         {contact.email}
       </TextLink>
-      <TextLink className="block" tone="muted" href={contact.github} arrow="↗">
+      <TextLink className="block" tone="muted" href={contact.github}>
         GitHub
       </TextLink>
-      <TextLink className="block" tone="muted" href={contact.linkedin} arrow="↗">
+      <TextLink className="block" tone="muted" href={contact.linkedin}>
         LinkedIn
       </TextLink>
-      <TextLink className="block" tone="muted" href={contact.designPortfolio} arrow="↗">
+      <TextLink className="block" tone="muted" href={contact.designPortfolio}>
         Design portfolio
       </TextLink>
     </div>

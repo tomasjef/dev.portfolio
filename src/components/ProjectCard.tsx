@@ -12,7 +12,7 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <article>
       <h3 className="text-title">
-        <TextLink href={project.url} arrow="↗">
+        <TextLink href={project.url}>
           {project.name}
         </TextLink>
         <span className="block text-muted">{project.meta}</span>
@@ -44,7 +44,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </a>
       {project.code && (
         <p className="mt-3">
-          <TextLink href={project.code} arrow="↗">
+          <TextLink href={project.code}>
             Code on GitHub
           </TextLink>
         </p>
