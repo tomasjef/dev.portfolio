@@ -7,7 +7,7 @@ function ClientList({ clients }: { clients: NonNullable<Job["clients"]> }) {
   return clients.map((client, i) => (
     <Fragment key={client.name}>
       {i > 0 && (i === clients.length - 1 ? " and " : ", ")}
-      <TextLink href={client.url} tone="muted">
+      <TextLink href={client.url} tone="soft">
         {client.name}
       </TextLink>
     </Fragment>
@@ -28,7 +28,9 @@ export function JobEntry({ job }: { job: Job }) {
         {job.clients && (
           <>
             {" "}
-            Clients include <ClientList clients={job.clients} />.
+            <span className="text-soft">
+              Clients include <ClientList clients={job.clients} />.
+            </span>
           </>
         )}
       </p>

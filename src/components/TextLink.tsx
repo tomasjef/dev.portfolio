@@ -2,11 +2,12 @@ import type { ComponentProps } from "react";
 
 type Props = ComponentProps<"a"> & {
   // Colour of the surrounding text; hover always moves to the other tone
-  tone?: "ink" | "muted";
+  tone?: "ink" | "soft" | "muted";
 };
 
 const hover = {
   ink: "hover:text-muted focus-visible:text-muted",
+  soft: "hover:text-muted focus-visible:text-muted",
   muted: "hover:text-ink focus-visible:text-ink",
 };
 
