@@ -22,6 +22,9 @@ export function Sidebar({ className = "" }: { className?: string }) {
         <TextLink className="block" tone="muted" href={contact.linkedin} arrow="↗">
           LinkedIn
         </TextLink>
+        <TextLink className="block" tone="muted" href={contact.designPortfolio} arrow="↗">
+          Design portfolio
+        </TextLink>
       </div>
 
       {skills.map(({ heading, items }) => (
