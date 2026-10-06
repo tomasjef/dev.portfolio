@@ -1,0 +1,3 @@
+# Applies to every file, including images and the CV PDF, which can't carry a meta tag
+/*
+  X-Robots-Tag: noindex, nofollow, noarchive
