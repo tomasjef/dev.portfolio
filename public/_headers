@@ -1,3 +1,10 @@
-# Applies to every file, including images and the CV PDF, which can't carry a meta tag
+# Applies to every file, including images and the CV PDF, which can't carry a meta tag.
+# /projects/* is served by the Worker, which sets its own headers (worker/index.ts).
 /*
   X-Robots-Tag: noindex, nofollow, noarchive
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# File names carry a content hash, so they never change
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
