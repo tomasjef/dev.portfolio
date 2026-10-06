@@ -129,7 +129,7 @@ export const contact = {
   email: "contact@tomasjef.com",
   github: "https://github.com/tomasjef",
   linkedin: "https://www.linkedin.com/in/tomasjef/",
-  designPortfolio: "https://tomasjef.com/",
+  designPortfolio: "https://publicidentity.studio/",
   // The download link only renders once this file exists in public/
   cv: "/tomas-jefanovas-cv.pdf",
 };
