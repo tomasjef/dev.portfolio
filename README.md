@@ -24,3 +24,10 @@ npm install
 `output: "export"` means no server at runtime: no API routes, Server Actions,
 cookies/headers, ISR or `next/image` optimization (images are served as-is).
 Everything renders at build time.
+
+## Deploying
+
+Pushing to `main` runs lint and build in GitHub Actions, then `wrangler deploy`
+(`.github/workflows/deploy.yml`). It needs a `CLOUDFLARE_API_TOKEN` repository
+secret (Cloudflare's "Edit Cloudflare Workers" token template) and a
+`CLOUDFLARE_ACCOUNT_ID` repository variable. `npm run deploy` still works locally.

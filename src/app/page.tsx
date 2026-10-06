@@ -27,6 +27,9 @@ export default function Home() {
           <TextLink href={contact.linkedin} arrow="↗">
             LinkedIn
           </TextLink>
+          <TextLink href={contact.designPortfolio} arrow="↗">
+            Design portfolio
+          </TextLink>
           {hasCv && (
             <TextLink href={contact.cv} arrow="↓" download>
               CV
@@ -46,7 +49,7 @@ export default function Home() {
           ))}
         </Section>
 
-        <Section label="Professional Experience">
+        <Section label="Professional experience">
           {jobs.map((job) => (
             <JobEntry key={job.org} job={job} />
           ))}
