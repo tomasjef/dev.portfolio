@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+}
+
+@theme {
+  --color-paper: #fafaf8;
+  --color-ink: rgb(0 0 0 / 0.95);
+  --color-muted: rgb(0 0 0 / 0.6);
+
+  --text-body: 16px;
+  --text-body--line-height: 24px;
+  --text-tag: 12px;
+  --text-tag--line-height: 16px;
+  /* Line heights on an 8px rhythm; the title steps down on phones, see :root below */
+  --text-title: var(--title-size);
+  --text-title--line-height: var(--title-leading);
+}
+
+:root {
+  --title-size: 20px;
+  --title-leading: 28px;
+}
+
+@media (width >= 48rem) {
+  :root {
+    --title-size: 24px;
+    --title-leading: 32px;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}

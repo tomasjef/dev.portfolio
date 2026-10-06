@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "dev-portfolio",
+  "compatibility_date": "2026-10-06",
+  // Static export from `next build`; no Worker script, assets only
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "dev.tomasjef.com", "custom_domain": true }]
+}
