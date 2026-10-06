@@ -21,6 +21,7 @@ export const projects: Project[] = [
   {
     name: "Margate Electronics",
     url: "https://margate-electronics.org/",
+    code: "https://github.com/tomasjef/margate-electronics-site",
     meta: "Solo design & build, 2026",
     summary:
       "Archival catalogue website for an electronic music label, with API-synced inventory, automated audio previews and a custom Avo CMS, deployed via CI/CD.",
