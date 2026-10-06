@@ -4,11 +4,11 @@ import { TextLink } from "./TextLink";
 
 // xl: single column beside the main content. The box hugs its longest line and
 // sits against the right page margin; the text inside stays left-aligned.
-// Smaller screens: a compact left-aligned grid at the end of the page.
+// Phones: one running column at the end of the page; tablets: three columns.
 export function Sidebar({ className = "" }: { className?: string }) {
   return (
     <aside
-      className={`grid max-w-[680px] grid-cols-2 gap-x-5 gap-y-[1lh] text-muted md:grid-cols-3 xl:flex xl:w-fit xl:flex-col xl:justify-self-end ${className}`}
+      className={`grid max-w-[680px] grid-cols-1 gap-x-5 gap-y-[1lh] text-muted md:grid-cols-3 xl:flex xl:w-fit xl:flex-col xl:justify-self-end ${className}`}
     >
       <div>
         <h2 className="text-ink">Contact</h2>
@@ -38,7 +38,7 @@ export function Sidebar({ className = "" }: { className?: string }) {
         </div>
       ))}
 
-      <div className="col-span-2">
+      <div className="md:col-span-2">
         <h2 className="text-ink">Education</h2>
         {education.map((lines) => (
           <p key={lines.join()} className="mt-[1lh] first-of-type:mt-0">
