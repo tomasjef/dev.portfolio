@@ -5,7 +5,9 @@ import { TextLink } from "./TextLink";
 
 // One column, the width of the image: title, description, stack, image or video, code link.
 export function ProjectCard({ project }: { project: Project }) {
-  const mediaClass = "h-auto w-full rounded-md outline-1 -outline-offset-1 outline-black/10";
+  // A light stroke and a soft shadow keep pale screenshots (Plant Match) off the page colour
+  const mediaClass =
+    "h-auto w-full rounded-md outline-1 -outline-offset-1 outline-black/15 shadow-[0_1px_3px_rgb(0_0_0/0.08)]";
 
   return (
     <article>
