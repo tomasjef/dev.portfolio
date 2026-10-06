@@ -19,23 +19,33 @@ export default function Home() {
           <span className="block text-muted">Development and design</span>
         </h1>
         {/* On desktop the sidebar carries these; on smaller screens it sits at the very end */}
-        <p className="mt-4 flex flex-wrap gap-x-4 xl:hidden">
-          <TextLink href={`mailto:${contact.email}`}>{contact.email}</TextLink>
-          <TextLink href={contact.github} arrow="↗">
-            GitHub
-          </TextLink>
-          <TextLink href={contact.linkedin} arrow="↗">
-            LinkedIn
-          </TextLink>
-          <TextLink href={contact.designPortfolio} arrow="↗">
-            Design portfolio
-          </TextLink>
-          {hasCv && (
-            <TextLink href={contact.cv} arrow="↓" download>
-              CV
+        <ul className="mt-4 xl:hidden">
+          <li>
+            <TextLink href={`mailto:${contact.email}`}>{contact.email}</TextLink>
+          </li>
+          <li>
+            <TextLink href={contact.github} arrow="↗">
+              GitHub
             </TextLink>
+          </li>
+          <li>
+            <TextLink href={contact.linkedin} arrow="↗">
+              LinkedIn
+            </TextLink>
+          </li>
+          <li>
+            <TextLink href={contact.designPortfolio} arrow="↗">
+              Design portfolio
+            </TextLink>
+          </li>
+          {hasCv && (
+            <li>
+              <TextLink href={contact.cv} arrow="↓" download>
+                CV
+              </TextLink>
+            </li>
           )}
-        </p>
+        </ul>
       </header>
 
       <main className="flex flex-col gap-y-12 xl:col-span-9 xl:row-start-2 xl:grid xl:grid-cols-subgrid xl:content-start">
