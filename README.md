@@ -25,6 +25,15 @@ npm install
 cookies/headers, ISR or `next/image` optimization (images are served as-is).
 Everything renders at build time.
 
+## Serving
+
+Everything is static files from `out/`, except `/projects/*` (the videos and
+their stills), which goes through a small Worker first (`worker/index.ts`,
+`run_worker_first` in `wrangler.jsonc`). Cloudflare's static assets ignore
+Range requests, and Safari on iPhone won't play a video without them, so the
+Worker answers them with 206. Headers for every other file are in
+`public/_headers`; the Worker sets its own, as `_headers` doesn't apply to it.
+
 ## Deploying
 
 Pushing to `main` runs lint and build in GitHub Actions, then `wrangler deploy`
