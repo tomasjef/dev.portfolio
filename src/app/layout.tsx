@@ -11,7 +11,7 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
 });
 
-const title = "Tomas Jefanovas — Development and design";
+const title = "Tomas Jefanovas · Development and design";
 
 // Link previews matter more than search here: the site is shared by URL, not found.
 // The preview image and icons come from opengraph-image.png, icon.svg and favicon.ico here.
