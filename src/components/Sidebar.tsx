@@ -4,7 +4,7 @@ import { ContactBlock } from "./ContactBlock";
 import { TextLink } from "./TextLink";
 
 // xl: single column beside the main content. The box hugs its longest line and
-// starts on column 11 of the grid; the text inside stays left-aligned.
+// starts on column 10 of the grid; the text inside stays left-aligned.
 // Phones: one running column at the end of the page; tablets: three columns.
 // Below xl, Contact moves up under the name instead (ContactBlock).
 export function Sidebar({ className = "" }: { className?: string }) {
