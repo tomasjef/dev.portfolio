@@ -1,7 +1,7 @@
 export const siteUrl = "https://dev.tomasjef.com";
 
 export const profile =
-  "Developer and designer, recently graduated from Le Wagon's AI Software Development Bootcamp. Background in graphic design and art direction for national museums and galleries, with a typography-led, systematic approach. Experienced in leading projects end to end, working closely with clients and multidisciplinary teams.";
+  "Developer and designer, recently graduated from Le\u00a0Wagon's AI Software Development Bootcamp. Background in graphic design and art direction for national museums and galleries, with a typography-led, systematic approach. Experienced in leading projects end to end, working closely with clients and multidisciplinary teams.";
 
 export type Project = {
   name: string;
