@@ -63,7 +63,7 @@ export const projects: Project[] = [
     code: "https://github.com/tomasjef/plant-match",
     meta: "Le Wagon, 2026",
     summary:
-      "Houseplant matching app using a questionnaire and a plant data API, with an AI care chatbot. Built as a team of four in a one-week bootcamp sprint.",
+      "Houseplant matching app using a questionnaire and plant data API, with an AI care chatbot. Built as a team of four in a one-week bootcamp sprint.",
     stack: [
       "Ruby on Rails",
       "PostgreSQL",
@@ -95,7 +95,7 @@ export const jobs: Job[] = [
     role: "Co-founder and creative director",
     context: "Independent record label and event series",
     summary:
-      "Created its visual identity and merchandise, and designed and built its website. Curate and coordinate the programme of live events and releases, working with artists and venues. Secured an Arts Council England grant.",
+      "Created brand identity, marketing materials, merchandise, and designed and built the website. Ongoing curation and coordinating the programme of live events and releases, working with artists and venues. Secured an Arts Council England grant.",
   },
   {
     dates: "2015–present",
@@ -104,7 +104,7 @@ export const jobs: Job[] = [
     role: "Designer and art director",
     context: "Independent practice, freelance and commissioned projects",
     summary:
-      "Specialise in visual identity, campaign and editorial design across print, digital and environmental graphics for arts and cultural organisations, often managing projects, clients and stakeholders directly, from brief to delivery.",
+      "Specialising in visual identity, campaign and editorial design across print, digital and environmental graphics for arts and cultural organisations, often managing projects, clients and stakeholders directly, from brief to delivery.",
     clients: [
       { name: "V&A", url: "https://www.vam.ac.uk/" },
       { name: "London Museum", url: "https://www.londonmuseum.org.uk/" },
@@ -140,10 +140,12 @@ export const skills: { heading: string; items: string[] }[] = [
     heading: "Development",
     items: [
       "Ruby on Rails",
-      "JavaScript, Hotwire",
+      "Hotwire",
+      "JavaScript",
       "TypeScript",
       "PostgreSQL, SQL",
-      "HTML, CSS/SCSS",
+      "HTML",
+      "CSS/SCSS",
       "REST APIs",
     ],
   },
@@ -153,7 +155,7 @@ export const skills: { heading: string; items: string[] }[] = [
   },
   {
     heading: "Code tools",
-    items: ["Git, GitHub", "VS Code, Claude Code", "Heroku, Cloudflare"],
+    items: ["Git, GitHub", "VS Code", "Claude Code", "Heroku", "Cloudflare"],
   },
   { heading: "Design tools", items: ["Figma", "Adobe Creative Cloud"] },
 ];

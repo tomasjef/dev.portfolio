@@ -4,13 +4,13 @@ import { ContactBlock } from "./ContactBlock";
 import { TextLink } from "./TextLink";
 
 // xl: single column beside the main content. The box hugs its longest line and
-// sits against the right page margin; the text inside stays left-aligned.
+// starts on column 10 of the grid; the text inside stays left-aligned.
 // Phones: one running column at the end of the page; tablets: three columns.
 // Below xl, Contact moves up under the name instead (ContactBlock).
 export function Sidebar({ className = "" }: { className?: string }) {
   return (
     <aside
-      className={`grid max-w-[680px] grid-cols-1 gap-x-5 gap-y-[1lh] text-muted md:grid-cols-3 xl:flex xl:w-fit xl:flex-col xl:justify-self-end ${className}`}
+      className={`grid max-w-[680px] grid-cols-1 gap-x-5 gap-y-[1lh] text-muted md:grid-cols-3 xl:flex xl:w-fit xl:flex-col xl:justify-self-start ${className}`}
     >
       <ContactBlock className="hidden xl:block" />
 
