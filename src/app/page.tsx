@@ -11,7 +11,7 @@ import { contact, jobs, profile, projects } from "@/content";
 // Wider than 1440 the columns stop growing and stay left-aligned, sidebar included.
 export default function Home() {
   return (
-    <div className="@container px-5 pt-5 pb-8 md:px-[30px] md:pt-8 md:pb-12 xl:grid xl:grid-cols-[repeat(12,minmax(0,calc((1380px-220px)/12)))] xl:items-baseline xl:gap-x-5 xl:pt-12">
+    <div className="@container px-5 pt-6 pb-8 md:px-[30px] md:pt-8 md:pb-12 xl:grid xl:grid-cols-[repeat(12,minmax(0,calc((1380px-220px)/12)))] xl:items-baseline xl:gap-x-5 xl:pt-12">
       <header className="pb-12 xl:col-span-7 xl:col-start-3">
         <h1 className="text-title">
           Tomas Jefanovas
@@ -43,7 +43,7 @@ export default function Home() {
         </Section>
       </main>
 
-      <Sidebar className="mt-12 xl:col-span-2 xl:col-start-11 xl:row-start-2 xl:mt-0" />
+      <Sidebar className="mt-12 xl:col-span-3 xl:col-start-10 xl:row-start-2 xl:mt-0" />
 
       <footer className="mt-12 text-muted xl:col-span-7 xl:col-start-3 xl:row-start-3">
         Designed in Figma, built with Next.js and TypeScript, hosted on Cloudflare. Set in Geist.
