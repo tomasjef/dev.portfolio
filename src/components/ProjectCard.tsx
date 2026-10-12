@@ -18,8 +18,8 @@ export function ProjectCard({ project }: { project: Project }) {
         <span className="block text-muted">{project.meta}</span>
       </h3>
       <div className="text-muted">
-        <p>{project.summary}</p>
-        <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Stack">
+        <p className="max-w-[38em]">{project.summary}</p>
+        <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Stack">
           {project.stack.map((tech) => (
             <li key={tech} className="rounded-full bg-black/5 px-2.5 py-1 text-tag text-ink">
               {tech}
@@ -43,7 +43,7 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
       </a>
       {project.code && (
-        <p className="mt-3">
+        <p className="mt-4">
           <TextLink href={project.code}>
             Code on GitHub
           </TextLink>

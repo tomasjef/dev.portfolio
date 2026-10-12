@@ -12,7 +12,7 @@
 
   --text-body: 16px;
   --text-body--line-height: 24px;
-  --text-tag: 12px;
+  --text-tag: 13px;
   --text-tag--line-height: 16px;
   /* Line heights on an 8px rhythm; the title steps down on phones, see :root below */
   --text-title: var(--title-size);
