@@ -43,7 +43,7 @@ export default function Home() {
         </Section>
       </main>
 
-      <Sidebar className="mt-12 xl:col-span-3 xl:col-start-10 xl:row-start-2 xl:mt-0" />
+      <Sidebar className="mt-12 xl:col-span-2 xl:col-start-11 xl:row-start-2 xl:mt-0" />
 
       <footer className="mt-12 text-muted xl:col-span-7 xl:col-start-3 xl:row-start-3">
         Designed in Figma, built with Next.js and TypeScript, hosted on Cloudflare. Set in Geist.
