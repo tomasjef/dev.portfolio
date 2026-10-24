@@ -83,12 +83,13 @@ export const projects: Project[] = [
     url: "https://margate-arts-club.margate-arts-club.workers.dev/",
     meta: "Solo design & build, 2026",
     summary:
-      "Website for a music and arts venue in Margate, with events pulled live from the OutSavvy API and pages and opening hours the club edits in Sanity.",
+      "Website for a music and arts venue in Margate, with events pulled live from the OutSavvy API, pages and opening hours the club edits in Sanity, and weekly and monthly event newsletters sent automatically through Amazon SES.",
     stack: [
       "Next.js",
       "TypeScript",
       "Sanity",
       "OutSavvy API",
+      "Amazon SES",
       "Cloudflare Workers",
       "Figma",
       "Claude Code",
