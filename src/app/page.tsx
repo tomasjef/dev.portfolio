@@ -2,7 +2,7 @@ import { CvTile } from "@/components/CvTile";
 import { FloatingContact } from "@/components/FloatingContact";
 import { GetInTouch } from "@/components/GetInTouch";
 import { ProjectCard } from "@/components/ProjectCard";
-import { button, display, external, shell, small } from "@/components/styles";
+import { button, display, external, headline, shell, small } from "@/components/styles";
 import { contact, profile, projects, status } from "@/content";
 import { hasCv } from "@/lib/cv";
 
@@ -25,7 +25,7 @@ export default function Home() {
       <main>
         <section className={`${shell} relative pt-20 pb-16 md:pt-32 md:pb-24`}>
           {/* Availability sits right above the headline, where it's read first; on
-              phones the two parts stack and the dot is dropped */}
+              phones the two parts stack and the · between them is dropped */}
           <p className={`${small} mb-6 flex flex-wrap items-center gap-x-3 gap-y-1`}>
             <span className="inline-flex items-center gap-3 whitespace-nowrap text-ink">
               <span className="ml-1 size-2 rounded-full bg-accent ring-4 ring-accent/20" />
@@ -34,7 +34,7 @@ export default function Home() {
             <span aria-hidden className="hidden sm:inline">·</span>
             <span className="whitespace-nowrap">{contact.location}</span>
           </p>
-          <h1 className="max-w-[17em] text-[clamp(34px,4.6vw,60px)] leading-[1.06] font-medium tracking-[-0.035em] text-balance">
+          <h1 className={headline}>
             {introLead}, <span className="text-black/40">{introRest}</span>
           </h1>
           <div className="mt-7">

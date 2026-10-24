@@ -8,6 +8,8 @@
 export const shell = "mx-auto w-full max-w-[1280px] px-5 md:px-10";
 export const tile = "rounded-[20px] bg-tile";
 export const mount = "rounded-[14px] bg-mount";
+// The hero headline, and the 404 page's
+export const headline = "max-w-[17em] text-[clamp(34px,4.6vw,60px)] leading-[1.06] font-medium tracking-[-0.035em] text-balance";
 export const display = "text-[clamp(28px,3.2vw,40px)] leading-[1.15] tracking-[-0.03em] text-balance";
 export const small = "text-[14px] tracking-[0.01em] text-muted";
 export const pill = "rounded-full bg-white px-3 py-1 text-[14px] tracking-[0.01em] whitespace-nowrap text-muted transition-colors duration-300";
