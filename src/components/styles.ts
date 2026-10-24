@@ -12,7 +12,7 @@ export const mount = "rounded-[14px] bg-mount";
 export const headline = "max-w-[17em] text-[clamp(34px,4.6vw,60px)] leading-[1.06] font-medium tracking-[-0.035em] text-balance";
 export const display = "text-[clamp(28px,3.2vw,40px)] leading-[1.15] tracking-[-0.03em] text-balance";
 export const small = "text-[14px] tracking-[0.01em] text-muted";
-export const pill = "rounded-full bg-white px-3 py-1 text-[14px] tracking-[0.01em] whitespace-nowrap text-muted transition-colors duration-300";
+export const pill = "rounded-full bg-pill px-3 py-1 text-[14px] tracking-[0.01em] whitespace-nowrap text-muted transition-colors duration-300";
 export const button = "inline-flex items-center justify-center rounded-full px-7 py-5 text-[18px] leading-none transition active:scale-[0.97]";
 // The hero's call to action, the same height as Download PDF CV (64px)
 export const buttonLarge = "inline-flex items-center justify-center rounded-full px-8 py-[22px] text-[20px] leading-none tracking-[-0.01em] transition active:scale-[0.97]";

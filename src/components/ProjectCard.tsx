@@ -28,7 +28,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="flex flex-1 flex-col px-4 pt-5 pb-4 md:px-5">
-        <h3 className="text-[20px] leading-[1.3] font-semibold tracking-[-0.01em] transition-colors group-hover:text-accent">
+        <h3 className="text-[20px] leading-[1.3] font-semibold tracking-[-0.01em] transition-colors group-hover:text-accent-text">
           {project.name}
           <span
             aria-hidden
@@ -41,7 +41,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className="mt-3 max-w-[34em] text-muted">{project.summary}</p>
         <ul className="mt-auto flex flex-wrap gap-1.5 pt-4" aria-label="Stack">
           {project.stack.map((tech) => (
-            <li key={tech} className={`${pill} group-hover:text-accent`}>
+            <li key={tech} className={`${pill} group-hover:text-accent-text`}>
               {tech}
             </li>
           ))}
