@@ -5,33 +5,89 @@
 }
 
 @theme {
-  --color-paper: #fafaf8;
   --color-ink: rgb(0 0 0 / 0.95);
   --color-muted: rgb(0 0 0 / 0.6);
-  --color-soft: rgb(0 0 0 / 0.8);
+  /* Electric blue, trying it instead of the green #15803d */
+  --color-accent: #3b25f5;
+  /* Project and CV tiles, and the darker mount the video or CV preview sits in */
+  --color-tile: #f3f4f3;
+  --color-tile-hover: #ebedeb;
+  --color-mount: #e3e6e4;
 
   --text-body: 16px;
   --text-body--line-height: 24px;
-  --text-tag: 13px;
-  --text-tag--line-height: 16px;
-  /* Line heights on an 8px rhythm; the title steps down on phones, see :root below */
-  --text-title: var(--title-size);
-  --text-title--line-height: var(--title-leading);
-}
-
-:root {
-  --title-size: 20px;
-  --title-leading: 28px;
-}
-
-@media (width >= 48rem) {
-  :root {
-    --title-size: 24px;
-    --title-leading: 32px;
-  }
 }
 
 body {
-  background: var(--color-paper);
+  background: white;
   color: var(--color-ink);
+}
+
+/* Sections rise in as they enter the viewport. Pure CSS (scroll-driven
+   animations), so content is visible without JS and in browsers that lack the
+   feature, and it is skipped for reduced motion. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+}
+
+/* The hand-drawn arrow in the hero draws itself once on load */
+.scribble path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scribble path {
+    animation: draw 1.4s 0.4s ease-out both;
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 400;
+  }
+}
+
+/* Get in touch: every few seconds a soft band of lighter blue sweeps through
+   the button. The band sits in the middle of a gradient 4 times the
+   button's width; sliding it from one end to the other carries the band
+   across, and at either end the button shows plain accent. At its lightest,
+   for a moment as the band passes, white text dips to about 3.6:1. */
+.sheen {
+  background: linear-gradient(
+      110deg,
+      var(--color-accent) 32%,
+      color-mix(in srgb, var(--color-accent) 62%, white) 50%,
+      var(--color-accent) 68%
+    )
+    100% 0 / 400% 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sheen {
+    animation: sheen 5s linear 0.6s infinite;
+  }
+}
+
+@keyframes sheen {
+  0% {
+    background-position: 100% 0;
+  }
+  65%,
+  100% {
+    background-position: 0 0;
+  }
 }

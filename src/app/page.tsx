@@ -1,53 +1,109 @@
-import { ContactBlock } from "@/components/ContactBlock";
-import { JobEntry } from "@/components/JobEntry";
+import { CvTile } from "@/components/CvTile";
+import { FloatingContact } from "@/components/FloatingContact";
+import { GetInTouch } from "@/components/GetInTouch";
 import { ProjectCard } from "@/components/ProjectCard";
-import { Section } from "@/components/Section";
-import { Sidebar } from "@/components/Sidebar";
-import { TextLink } from "@/components/TextLink";
-import { contact, jobs, profile, projects } from "@/content";
+import { button, display, external, shell, small } from "@/components/styles";
+import { contact, profile, projects, status } from "@/content";
+import { hasCv } from "@/lib/cv";
 
-// Spacing: 12–16 within an item; 48 between every block (items, sections, header, footer).
-// xl layout follows the Figma 1440 frame: 12 columns, 30px margins, 20px gutters.
-// Wider than 1440 the columns stop growing and stay left-aligned, sidebar included.
+// The profile is used a sentence at a time: the hero, then a two-tone statement after the work
+const [intro, background, leading] = profile.split(/(?<=\.)\s+/);
+const [introLead, introRest] = intro.split(/(?<=background),\s*/);
+
+const year = projects[0].meta.match(/\d{4}/)?.[0];
+
+// No email address is printed anywhere: contact is by button only.
 export default function Home() {
   return (
-    <div className="@container px-5 pt-6 pb-8 md:px-[30px] md:pt-8 md:pb-12 xl:grid xl:grid-cols-[repeat(12,minmax(0,calc((1380px-220px)/12)))] xl:items-baseline xl:gap-x-5 xl:pt-12">
-      <header className="pb-12 xl:col-span-7 xl:col-start-3">
-        <h1 className="text-title">
-          Tomas Jefanovas
-          <span className="block text-muted">Full-stack engineer</span>
-        </h1>
-        {/* Below xl Contact sits here; on desktop it heads the sidebar */}
-        <ContactBlock className="mt-6 xl:hidden" />
+    <>
+      <FloatingContact email={contact.email} watch="hero-actions" />
+
+      <header className={`${shell} py-6`}>
+        <a href="#" className="font-semibold">Tomas Jefanovas</a>
       </header>
 
-      <main className="flex flex-col gap-y-12 xl:col-span-9 xl:row-start-2 xl:grid xl:grid-cols-subgrid xl:content-start">
-        <Section label="Profile">
-          <p className="text-title text-muted">{profile}</p>
-        </Section>
-
-        <Section label="Recent projects">
-          {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
-          ))}
-        </Section>
-
-        <Section label="Professional experience">
-          {jobs.map((job) => (
-            <JobEntry key={job.org} job={job} />
-          ))}
-          <p>
-            Full work history at{" "}
-            <TextLink href={contact.linkedin}>linkedin.com/in/tomasjef</TextLink>
+      <main>
+        <section className={`${shell} relative pt-20 pb-16 md:pt-32 md:pb-24`}>
+          {/* Availability sits right above the headline, where it's read first; on
+              phones the two parts stack and the dot is dropped */}
+          <p className={`${small} mb-6 flex flex-wrap items-center gap-x-3 gap-y-1`}>
+            <span className="inline-flex items-center gap-2 whitespace-nowrap text-ink">
+              <span className="size-2 rounded-full bg-accent" />
+              {status}
+            </span>
+            <span aria-hidden className="hidden sm:inline">·</span>
+            <span className="whitespace-nowrap">{contact.location}</span>
           </p>
-        </Section>
+          <h1 className="max-w-[17em] text-[clamp(34px,4.6vw,60px)] leading-[1.06] font-medium tracking-[-0.035em] text-balance">
+            {introLead}, <span className="text-black/40">{introRest}</span>
+          </h1>
+          <div className="mt-7">
+            <GetInTouch email={contact.email} id="hero-actions" large />
+          </div>
+          {/* Hand-drawn arrow down to the work, desktop only */}
+          <svg
+            aria-hidden
+            viewBox="0 0 120 150"
+            className="scribble absolute right-[12%] bottom-0 hidden h-[150px] w-[120px] text-accent lg:block"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M20 8c30 2 52 18 44 38-6 15-30 12-27-3 3-14 30-12 40 6 10 17 6 52-6 92" />
+            <path d="M58 128l13 15 12-18" />
+          </svg>
+        </section>
+
+        <section id="work" className={`${shell} scroll-mt-6`}>
+          <h2 className="mb-6 font-semibold">
+            Selected work
+            {year && <span className="font-normal text-muted"> · {year}</span>}
+          </h2>
+          <div className="grid gap-4 md:grid-cols-2 md:gap-5">
+            {projects.map((project) => (
+              <ProjectCard key={project.name} project={project} />
+            ))}
+          </div>
+        </section>
+
+        <section className={`${shell} reveal flex py-24 md:justify-center md:py-44 md:text-center`}>
+          <p className={`${display} max-w-[26em]`}>
+            {background} <span className="text-black/40">{leading}</span>
+          </p>
+        </section>
+
+        {hasCv && <CvTile />}
+
+        <section id="contact" className={`${shell} mt-4 scroll-mt-6 md:mt-5`}>
+          <div className="reveal flex flex-col gap-8 rounded-[20px] bg-ink p-6 text-white md:p-10 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="text-[14px] tracking-[0.01em] text-white/60">Got a project or a role in mind?</p>
+              <p className={`${display} mt-2`}>Let&rsquo;s chat.</p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <GetInTouch email={contact.email} />
+              {(
+                [
+                  ["GitHub", contact.github],
+                  ["LinkedIn", contact.linkedin],
+                  ["Design portfolio", contact.designPortfolio],
+                ] as const
+              ).map(([name, href]) => (
+                <a key={name} href={href} {...external} className={`${button} bg-white/10 hover:bg-white/25`}>
+                  {name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
-      <Sidebar className="mt-12 xl:col-span-3 xl:col-start-10 xl:row-start-2 xl:mt-0" />
-
-      <footer className="mt-12 text-muted xl:col-span-7 xl:col-start-3 xl:row-start-3">
-        Designed in Figma, built with Next.js and TypeScript, hosted on Cloudflare. Set in Geist.
+      <footer className={`${shell} ${small} flex flex-col gap-2 py-8 lg:flex-row lg:justify-between lg:gap-8`}>
+        <p className="whitespace-nowrap">© {new Date().getFullYear()} Tomas Jefanovas</p>
+        <p>Designed in Figma, built with Next.js and TypeScript, hosted on Cloudflare. Set in Geist.</p>
       </footer>
-    </div>
+    </>
   );
 }
