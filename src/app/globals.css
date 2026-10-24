@@ -7,8 +7,8 @@
 @theme {
   --color-ink: rgb(0 0 0 / 0.95);
   --color-muted: rgb(0 0 0 / 0.6);
-  /* Electric blue, trying it instead of the green #15803d */
-  --color-accent: #3b25f5;
+  /* Violet blue, from ilse-moreno.framer.website (was #3b25f5, and green #15803d before that) */
+  --color-accent: #5b3df5;
   /* Project and CV tiles, and the darker mount the video or CV preview sits in */
   --color-tile: #f3f4f3;
   --color-tile-hover: #ebedeb;

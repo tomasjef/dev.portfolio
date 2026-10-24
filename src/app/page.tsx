@@ -27,8 +27,8 @@ export default function Home() {
           {/* Availability sits right above the headline, where it's read first; on
               phones the two parts stack and the dot is dropped */}
           <p className={`${small} mb-6 flex flex-wrap items-center gap-x-3 gap-y-1`}>
-            <span className="inline-flex items-center gap-2 whitespace-nowrap text-ink">
-              <span className="size-2 rounded-full bg-accent" />
+            <span className="inline-flex items-center gap-3 whitespace-nowrap text-ink">
+              <span className="ml-1 size-2 rounded-full bg-accent ring-4 ring-accent/20" />
               {status}
             </span>
             <span aria-hidden className="hidden sm:inline">·</span>
