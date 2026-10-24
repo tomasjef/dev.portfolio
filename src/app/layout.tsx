@@ -15,6 +15,8 @@ const title = "Tomas Jefanovas · Full-stack engineer";
 
 // Link previews matter more than search here: the site is shared by URL, not found.
 // The preview image and icons come from opengraph-image.png, icon.svg and favicon.ico here.
+// icon.svg is the accent dot with the buttons' light sweep; browsers that animate
+// SVG favicons play it, the rest show the plain dot.
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,

@@ -1,7 +1,7 @@
 export const siteUrl = "https://dev.tomasjef.com";
 
 export const profile =
-  "Full-stack engineer with a design background, trained at Le\u00a0Wagon in 2026, using code and AI as tools to turn ideas into working projects. Years of design and art direction for national museums and galleries bring close attention to detail and a systematic way of working. Experienced in leading projects end to end, working closely with clients and multidisciplinary teams.";
+  "Full-stack engineer with a design background, trained at Le\u00a0Wagon in 2026, using code and AI as tools to turn ideas into working projects. Brings over a decade of experience in design and art direction for national museums and galleries, with close attention to detail and a systematic way of working. Experienced in leading projects end to end, working closely with clients and multidisciplinary teams.";
 
 export type Project = {
   name: string;
@@ -30,13 +30,10 @@ export const projects: Project[] = [
       "Hotwire",
       "TypeScript",
       "SQLite",
-      "Solid Queue",
-      "ffmpeg",
-      "Avo",
       "Bandcamp API",
-      "Cloudflare Pages and R2",
       "GitHub Actions",
-      "Minitest",
+      "Cloudflare R2",
+      "Claude Code",
     ],
     image: "/projects/margate-electronics.webp",
     video: "/projects/margate-electronics.mp4",
@@ -50,9 +47,13 @@ export const projects: Project[] = [
       "AI support chatbot for a fictional digital bank, using RAG to ground answers in uploaded PDFs, with clickable source links.",
     stack: [
       "Ruby on Rails",
+      "Hotwire",
       "PostgreSQL (pgvector)",
       "OpenAI API",
-      "Hotwire",
+      "RAG",
+      "Vector embeddings",
+      "Prompt design",
+      "Heroku",
     ],
     image: "/projects/halo.webp",
     video: "/projects/halo.mp4",
@@ -67,12 +68,33 @@ export const projects: Project[] = [
     stack: [
       "Ruby on Rails",
       "PostgreSQL",
-      "Devise",
+      "JavaScript (Stimulus)",
+      "SCSS",
       "Perenual API",
       "RubyLLM",
+      "Heroku",
     ],
     image: "/projects/plant-match.webp",
     video: "/projects/plant-match.mp4",
+  },
+  {
+    name: "Margate Arts Club",
+    // Test deploy until the club's own domain is attached
+    url: "https://margate-arts-club.margate-arts-club.workers.dev/",
+    meta: "Solo design & build, 2026",
+    summary:
+      "Website for a music and arts venue in Margate, with events pulled live from the OutSavvy API and pages and opening hours the club edits in Sanity.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Sanity",
+      "OutSavvy API",
+      "Cloudflare Workers",
+      "Figma",
+      "Claude Code",
+    ],
+    image: "/projects/margate-arts-club.webp",
+    video: "/projects/margate-arts-club.mp4",
   },
 ];
 
@@ -126,14 +148,17 @@ export const jobs: Job[] = [
   },
 ];
 
+// The availability line at the top of the homepage
+export const status = "Open to full-stack / design engineer roles";
+
 export const contact = {
-  location: "London/Margate, UK",
+  location: "London/Hybrid/Remote",
   email: "contact@tomasjef.com",
   github: "https://github.com/tomasjef",
   linkedin: "https://www.linkedin.com/in/tomasjef/",
   designPortfolio: "https://publicidentity.studio/",
   // The download link only renders once this file exists in public/
-  cv: "/tomas-jefanovas-cv.pdf",
+  cv: "/TOMAS_JEFANOVAS_FullStackEngineer_CV.pdf",
 };
 
 export const skills: { heading: string; items: string[] }[] = [
