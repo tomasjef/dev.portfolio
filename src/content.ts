@@ -1,7 +1,7 @@
 export const siteUrl = "https://dev.tomasjef.com";
 
 export const profile =
-  "Developer and designer, recently graduated from Le\u00a0Wagon's AI Software Development Bootcamp. Background in graphic design and art direction for national museums and galleries, with a typography-led, systematic approach. Experienced in leading projects end to end, working closely with clients and multidisciplinary teams.";
+  "Full-stack engineer with a design background, trained at Le\u00a0Wagon in 2026, using code and AI as tools to turn ideas into working projects. Years of design and art direction for national museums and galleries bring close attention to detail and a systematic way of working. Experienced in leading projects end to end, working closely with clients and multidisciplinary teams.";
 
 export type Project = {
   name: string;
@@ -93,12 +93,12 @@ export const jobs: Job[] = [
     org: "Margate Electronics",
     url: "https://margate-electronics.org/",
     role: "Co-founder and creative director",
-    context: "Independent record label and event series",
+    context: "Live event series and independent record label",
     summary:
-      "Created brand identity, marketing materials, merchandise, and designed and built the website. Ongoing curation and coordinating the programme of live events and releases, working with artists and venues. Secured an Arts Council England grant.",
+      "Curate and promote a programme of live events, and produce physical and digital releases with artists. Secured Arts Council England funding and plan the programme to a fixed budget. Created the brand, merchandise and website.",
   },
   {
-    dates: "2015–present",
+    dates: "2016–present",
     org: "Public Identity",
     url: "https://publicidentity.studio/",
     role: "Designer and art director",
@@ -109,17 +109,18 @@ export const jobs: Job[] = [
       { name: "V&A", url: "https://www.vam.ac.uk/" },
       { name: "London Museum", url: "https://www.londonmuseum.org.uk/" },
       { name: "National Portrait Gallery", url: "https://www.npg.org.uk/" },
-      { name: "British Museum", url: "https://www.britishmuseum.org/" },
+      { name: "The British Museum", url: "https://www.britishmuseum.org/" },
       { name: "Sadler's Wells", url: "https://www.sadlerswells.com/" },
       { name: "JW3", url: "https://www.jw3.org.uk/" },
     ],
   },
   {
-    dates: "2013–2015",
+    dates: "2013–2016",
     org: "Tate",
     url: "https://www.tate.org.uk/",
     role: "Graphic and digital designer",
-    context: "Full-time, in-house design studio",
+    context:
+      "Full-time, in-house design studio until 2014, then freelance while at the RCA",
     summary:
       "Designed campaign identities for major exhibitions across all four Tate galleries and applied them to digital assets, printed collateral and exhibition graphics. Worked closely with marketing, curatorial and interpretation teams, maintaining brand standards throughout a high-volume programme.",
   },
@@ -143,7 +144,9 @@ export const skills: { heading: string; items: string[] }[] = [
       "Hotwire",
       "JavaScript",
       "TypeScript",
-      "PostgreSQL, SQL",
+      "Next.js",
+      "PostgreSQL",
+      "SQL",
       "HTML",
       "CSS/SCSS",
       "REST APIs",
@@ -151,11 +154,17 @@ export const skills: { heading: string; items: string[] }[] = [
   },
   {
     heading: "AI tooling",
-    items: ["OpenAI API", "RAG, vector embeddings", "Prompt design"],
+    items: [
+      "OpenAI API",
+      "RAG",
+      "Vector embeddings",
+      "Claude Code",
+      "Prompt design",
+    ],
   },
   {
-    heading: "Code tools",
-    items: ["Git, GitHub", "VS Code", "Claude Code", "Heroku", "Cloudflare"],
+    heading: "Tools and deployment",
+    items: ["Git", "CI/CD (GitHub Actions)", "Cloudflare", "Heroku"],
   },
   { heading: "Design tools", items: ["Figma", "Adobe Creative Cloud"] },
 ];

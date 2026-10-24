@@ -15,7 +15,7 @@ export default function Home() {
       <header className="pb-12 xl:col-span-7 xl:col-start-3">
         <h1 className="text-title">
           Tomas Jefanovas
-          <span className="block text-muted">Development and design</span>
+          <span className="block text-muted">Full-stack engineer</span>
         </h1>
         {/* Below xl Contact sits here; on desktop it heads the sidebar */}
         <ContactBlock className="mt-6 xl:hidden" />

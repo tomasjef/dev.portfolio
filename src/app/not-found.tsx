@@ -6,7 +6,7 @@ export default function NotFound() {
       <main className="xl:col-span-7 xl:col-start-3">
         <h1 className="text-title">
           Tomas Jefanovas
-          <span className="block text-muted">Development and design</span>
+          <span className="block text-muted">Full-stack engineer</span>
         </h1>
         <p className="mt-12 text-title text-muted">This page doesn’t exist.</p>
         <p className="mt-4">
