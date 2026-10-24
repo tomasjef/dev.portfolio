@@ -2,6 +2,7 @@ import { CvTile } from "@/components/CvTile";
 import { FloatingContact } from "@/components/FloatingContact";
 import { GetInTouch } from "@/components/GetInTouch";
 import { ProjectCard } from "@/components/ProjectCard";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { button, display, external, headline, shell, small } from "@/components/styles";
 import { contact, profile, projects, status } from "@/content";
 import { hasCv } from "@/lib/cv";
@@ -18,8 +19,9 @@ export default function Home() {
     <>
       <FloatingContact email={contact.email} watch="hero-actions" />
 
-      <header className={`${shell} py-6`}>
+      <header className={`${shell} flex items-center justify-between py-6`}>
         <a href="#" className="font-semibold">Tomas Jefanovas</a>
+        <ThemeToggle />
       </header>
 
       <main>
@@ -28,14 +30,14 @@ export default function Home() {
               phones the two parts stack and the · between them is dropped */}
           <p className={`${small} mb-6 flex flex-wrap items-center gap-x-3 gap-y-1`}>
             <span className="inline-flex items-center gap-3 whitespace-nowrap text-ink">
-              <span className="ml-1 size-2 rounded-full bg-accent ring-4 ring-accent/20" />
+              <span className="ml-1 size-2 rounded-full bg-accent-text ring-4 ring-accent-text/20" />
               {status}
             </span>
             <span aria-hidden className="hidden sm:inline">·</span>
             <span className="whitespace-nowrap">{contact.location}</span>
           </p>
           <h1 className={headline}>
-            {introLead}, <span className="text-black/40">{introRest}</span>
+            {introLead}, <span className="text-faint">{introRest}</span>
           </h1>
           <div className="mt-7">
             <GetInTouch email={contact.email} id="hero-actions" large />
@@ -44,7 +46,7 @@ export default function Home() {
           <svg
             aria-hidden
             viewBox="0 0 120 150"
-            className="scribble absolute right-[12%] bottom-0 hidden h-[150px] w-[120px] text-accent lg:block"
+            className="scribble absolute right-[12%] bottom-0 hidden h-[150px] w-[120px] text-accent-text lg:block"
             fill="none"
             stroke="currentColor"
             strokeWidth="2.2"
@@ -70,14 +72,14 @@ export default function Home() {
 
         <section className={`${shell} reveal flex py-24 md:justify-center md:py-44 md:text-center`}>
           <p className={`${display} max-w-[26em]`}>
-            {background} <span className="text-black/40">{leading}</span>
+            {background} <span className="text-faint">{leading}</span>
           </p>
         </section>
 
         {hasCv && <CvTile />}
 
         <section id="contact" className={`${shell} mt-4 scroll-mt-6 md:mt-5`}>
-          <div className="reveal flex flex-col gap-8 rounded-[20px] bg-ink p-6 text-white md:p-10 lg:flex-row lg:items-end lg:justify-between">
+          <div className="reveal flex flex-col gap-8 rounded-[20px] bg-panel p-6 text-white md:p-10 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-[14px] tracking-[0.01em] text-white/60">Got a project or a role in mind?</p>
               <p className={`${display} mt-2`}>Let&rsquo;s chat.</p>

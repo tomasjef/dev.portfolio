@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { profile, siteUrl } from "@/content";
 import "./globals.css";
@@ -27,9 +27,25 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
 };
 
+// Browser chrome (the address bar on phones) matches the page in either mode
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f0f10" },
+  ],
+};
+
+// Runs before the first paint: the visitor's saved choice from the header
+// toggle, otherwise the system setting, kept in step if that changes
+const themeScript = `(function(){var d=document.documentElement,q=matchMedia("(prefers-color-scheme: dark)");function set(){var t=null;try{t=localStorage.getItem("theme")}catch(e){}d.dataset.theme=t||(q.matches?"dark":"light")}set();q.addEventListener("change",set)})()`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} antialiased`}>
+    // The script sets data-theme on <html> before React hydrates
+    <html lang="en" className={`${geistSans.variable} antialiased`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="font-sans font-medium text-body">{children}</body>
     </html>
   );
