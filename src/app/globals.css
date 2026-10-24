@@ -7,7 +7,8 @@
 @theme {
   --color-ink: rgb(0 0 0 / 0.95);
   --color-muted: rgb(0 0 0 / 0.6);
-  /* Electric blue, trying it instead of the green #15803d */
+  /* Electric blue: buttons, hover states, the status dot and the favicon (icon.svg,
+     favicon.ico and apple-icon.png carry their own copy of it) */
   --color-accent: #3b25f5;
   /* Project and CV tiles, and the darker mount the video or CV preview sits in */
   --color-tile: #f3f4f3;
