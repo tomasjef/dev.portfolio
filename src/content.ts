@@ -1,7 +1,7 @@
 export const siteUrl = "https://dev.tomasjef.com";
 
 export const profile =
-  "Full-stack engineer with a design background, trained at Le\u00a0Wagon in 2026, using code and AI as tools to turn ideas into working projects. I bring over a decade of experience in design and art direction for national museums and galleries, with close attention to detail and a systematic way of working. Experienced in leading projects end to end, working closely with clients and multidisciplinary teams.";
+  "Full-stack engineer with a design background, trained at Le\u00a0Wagon in 2026, using code and AI as tools to turn ideas into working projects. I bring over a decade of experience in design and art direction for national museums and galleries, along with close attention to detail and a systematic way of working. I’ve led projects end to end, working closely with clients and multidisciplinary teams.";
 
 export type Project = {
   name: string;
