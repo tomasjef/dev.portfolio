@@ -13,7 +13,7 @@ export function CvTile() {
       <div className={`reveal ${tile} grid gap-8 p-5 md:gap-10 md:p-8 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-16`}>
         <div className="flex flex-col items-start justify-center gap-8">
           <h2 className={`${display} max-w-[14em] font-medium`}>
-            Experience, education and toolbox, <span className="text-faint">on one page.</span>
+            Experience, education and toolbox, <span className="text-faint">on one page</span>
           </h2>
           <a
             href={contact.cv}
