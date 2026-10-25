@@ -8,9 +8,8 @@ import { contact, profile, projects, status } from "@/content";
 import { hasCv } from "@/lib/cv";
 
 // The profile is used a sentence at a time: the hero, then a two-tone statement
-// after the work. Headings on the page carry no full stops (only the project
-// descriptions do), so each sentence loses its own.
-const [intro, background, leading] = profile.split(/(?<=\.)\s+/).map((sentence) => sentence.replace(/\.$/, ""));
+// after the work. Other headings carry no full stops, but these two keep theirs.
+const [intro, background, leading] = profile.split(/(?<=\.)\s+/);
 const [introLead, introRest] = intro.split(/(?<=background),\s*/);
 
 const year = projects[0].meta.match(/\d{4}/)?.[0];
