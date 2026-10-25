@@ -14,7 +14,7 @@ export type Project = {
   image: string;
   // Silent screen recording, 1360×752, played on loop
   video?: string;
-  // On phones: a recording of the site's own phone layout, 720×960 (3:4), and its first frame
+  // On phones: a recording of the site's own phone layout, 1080×1440 (3:4), and its first frame
   phone?: { video: string; image: string };
 };
 
@@ -102,7 +102,7 @@ export const projects: Project[] = [
 ];
 
 // The availability line at the top of the homepage
-export const status = "Open to full-stack engineer / design engineer roles";
+export const status = "Open to full-stack engineer roles";
 
 export const contact = {
   location: "London/Hybrid/Remote",
