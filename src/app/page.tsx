@@ -7,8 +7,10 @@ import { button, display, external, headline, shell, small } from "@/components/
 import { contact, profile, projects, status } from "@/content";
 import { hasCv } from "@/lib/cv";
 
-// The profile is used a sentence at a time: the hero, then a two-tone statement after the work
-const [intro, background, leading] = profile.split(/(?<=\.)\s+/);
+// The profile is used a sentence at a time: the hero, then a two-tone statement
+// after the work. Headings on the page carry no full stops (only the project
+// descriptions do), so each sentence loses its own.
+const [intro, background, leading] = profile.split(/(?<=\.)\s+/).map((sentence) => sentence.replace(/\.$/, ""));
 const [introLead, introRest] = intro.split(/(?<=background),\s*/);
 
 const year = projects[0].meta.match(/\d{4}/)?.[0];
@@ -25,10 +27,10 @@ export default function Home() {
       </header>
 
       <main>
-        <section className={`${shell} relative pt-20 pb-16 md:pt-32 md:pb-24`}>
+        <section className={`${shell} pt-20 pb-16 md:pt-32 md:pb-24`}>
           {/* Availability sits right above the headline, where it's read first; on
               phones the two parts stack and the · between them is dropped */}
-          <p className={`${small} mb-6 flex flex-wrap items-center gap-x-3 gap-y-1`}>
+          <p className={`${small} mb-6 flex flex-wrap items-center gap-x-2 gap-y-1`}>
             <span className="inline-flex items-center gap-3 whitespace-nowrap text-ink">
               <span className="ml-1 size-2 rounded-full bg-accent-text ring-4 ring-accent-text/20" />
               {status}
@@ -42,20 +44,6 @@ export default function Home() {
           <div className="mt-7">
             <GetInTouch email={contact.email} id="hero-actions" large />
           </div>
-          {/* Hand-drawn arrow down to the work, desktop only */}
-          <svg
-            aria-hidden
-            viewBox="0 0 120 150"
-            className="scribble absolute right-[12%] bottom-0 hidden h-[150px] w-[120px] text-accent-text lg:block"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M20 8c30 2 52 18 44 38-6 15-30 12-27-3 3-14 30-12 40 6 10 17 6 52-6 92" />
-            <path d="M58 128l13 15 12-18" />
-          </svg>
         </section>
 
         <section id="work" className={`${shell} scroll-mt-6`}>
@@ -82,10 +70,13 @@ export default function Home() {
           <div className="reveal flex flex-col gap-8 rounded-[20px] bg-panel p-6 text-white md:p-10 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-[14px] tracking-[0.01em] text-white/60">Got a project or a role in mind?</p>
-              <p className={`${display} mt-2`}>Let&rsquo;s chat.</p>
+              <p className={`${display} mt-2`}>Let&rsquo;s chat</p>
             </div>
+            {/* On phones Get in touch has the first line to itself */}
             <div className="flex flex-wrap gap-2">
-              <GetInTouch email={contact.email} />
+              <div className="max-sm:w-full">
+                <GetInTouch email={contact.email} />
+              </div>
               {(
                 [
                   ["GitHub", contact.github],
@@ -104,7 +95,7 @@ export default function Home() {
 
       <footer className={`${shell} ${small} flex flex-col gap-2 py-8 lg:flex-row lg:justify-between lg:gap-8`}>
         <p className="whitespace-nowrap">© {new Date().getFullYear()} Tomas Jefanovas</p>
-        <p>Designed in Figma, built with Next.js and TypeScript, hosted on Cloudflare. Set in Geist.</p>
+        <p>Designed in Figma, built with Next.js and TypeScript, hosted on Cloudflare, set in Geist</p>
       </footer>
     </>
   );

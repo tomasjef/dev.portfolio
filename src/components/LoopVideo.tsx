@@ -7,10 +7,14 @@ import { useEffect, useRef } from "react";
 export function LoopVideo({
   src,
   poster,
+  width = 680,
+  height = 376,
   className = "",
 }: {
   src: string;
   poster: string;
+  width?: number;
+  height?: number;
   className?: string;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -35,8 +39,8 @@ export function LoopVideo({
       ref={ref}
       src={src}
       poster={poster}
-      width={680}
-      height={376}
+      width={width}
+      height={height}
       muted
       loop
       playsInline

@@ -1,7 +1,7 @@
 export const siteUrl = "https://dev.tomasjef.com";
 
 export const profile =
-  "Full-stack engineer with a design background, trained at Le\u00a0Wagon in 2026, using code and AI as tools to turn ideas into working projects. Brings over a decade of experience in design and art direction for national museums and galleries, with close attention to detail and a systematic way of working. Experienced in leading projects end to end, working closely with clients and multidisciplinary teams.";
+  "Full-stack engineer with a design background, trained at Le\u00a0Wagon in 2026, using code and AI as tools to turn ideas into working projects. I bring over a decade of experience in design and art direction for national museums and galleries, with close attention to detail and a systematic way of working. Experienced in leading projects end to end, working closely with clients and multidisciplinary teams.";
 
 export type Project = {
   name: string;
@@ -14,6 +14,8 @@ export type Project = {
   image: string;
   // Silent screen recording, 1360×752, played on loop
   video?: string;
+  // On phones: a recording of the site's own phone layout, 720×960 (3:4), and its first frame
+  phone?: { video: string; image: string };
 };
 
 export const projects: Project[] = [
@@ -35,6 +37,7 @@ export const projects: Project[] = [
     ],
     image: "/projects/margate-electronics.webp",
     video: "/projects/margate-electronics.mp4",
+    phone: { video: "/projects/margate-electronics-phone.mp4", image: "/projects/margate-electronics-phone.webp" },
   },
   {
     name: "Halo",
@@ -54,6 +57,7 @@ export const projects: Project[] = [
     ],
     image: "/projects/halo.webp",
     video: "/projects/halo.mp4",
+    phone: { video: "/projects/halo-phone.mp4", image: "/projects/halo-phone.webp" },
   },
   {
     name: "Plant Match",
@@ -72,6 +76,7 @@ export const projects: Project[] = [
     ],
     image: "/projects/plant-match.webp",
     video: "/projects/plant-match.mp4",
+    phone: { video: "/projects/plant-match-phone.mp4", image: "/projects/plant-match-phone.webp" },
   },
   {
     name: "Margate Arts Club",
@@ -92,11 +97,12 @@ export const projects: Project[] = [
     ],
     image: "/projects/margate-arts-club.webp",
     video: "/projects/margate-arts-club.mp4",
+    phone: { video: "/projects/margate-arts-club-phone.mp4", image: "/projects/margate-arts-club-phone.webp" },
   },
 ];
 
 // The availability line at the top of the homepage
-export const status = "Open to full-stack / design engineer roles";
+export const status = "Open to full-stack engineer / design engineer roles";
 
 export const contact = {
   location: "London/Hybrid/Remote",

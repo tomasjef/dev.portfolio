@@ -17,7 +17,7 @@
   /* Electric blue, the fill behind white button text. The favicon (icon.svg,
      favicon.ico and apple-icon.png) carries its own copy of it */
   --color-accent: #3b25f5;
-  /* The accent as text or line: hover titles and tags, the status dot, the arrow */
+  /* The accent as text or line: hover titles and tags, the status dot */
   --color-accent-text: #3b25f5;
   /* Project and CV tiles, and the darker mount the video or CV preview sits in */
   --color-tile: #f3f4f3;
@@ -72,24 +72,6 @@ body {
   from {
     opacity: 0;
     transform: translateY(32px);
-  }
-}
-
-/* The hand-drawn arrow in the hero draws itself once on load */
-.scribble path {
-  stroke-dasharray: 400;
-  stroke-dashoffset: 0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .scribble path {
-    animation: draw 1.4s 0.4s ease-out both;
-  }
-}
-
-@keyframes draw {
-  from {
-    stroke-dashoffset: 400;
   }
 }
 

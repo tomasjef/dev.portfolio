@@ -20,12 +20,12 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label="Switch between light and dark mode"
-      className="-my-2 -mr-2 flex size-10 items-center justify-center rounded-full text-muted transition hover:bg-tile hover:text-ink active:scale-[0.97]"
+      className="-my-2.5 -mr-2.5 flex size-11 items-center justify-center rounded-full text-muted transition hover:bg-tile hover:text-ink active:scale-[0.97]"
     >
       <svg
         aria-hidden
         viewBox="0 0 24 24"
-        className="size-[18px]"
+        className="size-[22px]"
         fill="none"
         stroke="currentColor"
         strokeWidth="1.8"

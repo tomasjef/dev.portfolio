@@ -8,10 +8,12 @@ const creditOf = (meta: string) => meta.replace(/,?\s*\d{4}$/, "");
 
 // The whole card is the link: on hover it lifts, the recording zooms a touch
 // inside its frame, the arrow by the title moves out and the title and stack
-// turn the accent colour.
+// turn the accent colour. Phones have no hover, so there the desktop recording
+// in its grey frame gives way to a recording of the site's phone layout,
+// filling the frame.
 export function ProjectCard({ project }: { project: Project }) {
-  const mediaClass =
-    "block aspect-[1360/752] h-auto w-full rounded-[8px] object-cover object-top shadow-[0_16px_40px_rgb(0_0_0/0.16)] transition duration-500 ease-out group-hover:scale-[1.045] group-hover:shadow-[0_24px_56px_rgb(0_0_0/0.24)]";
+  const { phone } = project;
+  const mediaClass = `block aspect-[1360/752] h-auto w-full rounded-[8px] object-cover object-top shadow-[0_16px_40px_rgb(0_0_0/0.16)] transition duration-500 ease-out group-hover:scale-[1.045] group-hover:shadow-[0_24px_56px_rgb(0_0_0/0.24)] ${phone ? "max-md:hidden" : ""}`;
 
   return (
     <a
@@ -19,7 +21,16 @@ export function ProjectCard({ project }: { project: Project }) {
       {...external}
       className={`reveal ${tile} group flex flex-col p-2 transition duration-300 ease-out hover:-translate-y-2 hover:bg-tile-hover hover:shadow-[0_2px_4px_rgb(0_0_0/0.06),0_36px_64px_-22px_rgb(0_0_0/0.42)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent`}
     >
-      <div className={`${mount} overflow-hidden p-[6%]`}>
+      <div className={`${mount} overflow-hidden ${phone ? "md:p-[6%]" : "p-[6%]"}`}>
+        {phone && (
+          <LoopVideo
+            src={phone.video}
+            poster={phone.image}
+            width={360}
+            height={480}
+            className="block aspect-[3/4] h-auto w-full object-cover object-top md:hidden"
+          />
+        )}
         {project.video ? (
           <LoopVideo src={project.video} poster={project.image} className={mediaClass} />
         ) : (
