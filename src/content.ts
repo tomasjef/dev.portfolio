@@ -80,8 +80,7 @@ export const projects: Project[] = [
   },
   {
     name: "Margate Arts Club",
-    // Test deploy until the club's own domain is attached
-    url: "https://margate-arts-club.margate-arts-club.workers.dev/",
+    url: "https://new.margatearts.club/",
     meta: "Solo design & build, 2026",
     summary:
       "Website for a music and arts venue in Margate, with events pulled live from the OutSavvy API, pages and opening hours the club edits in Sanity, and weekly and monthly event newsletters sent automatically through Amazon SES.",
