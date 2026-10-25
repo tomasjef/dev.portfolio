@@ -23,6 +23,8 @@
   --color-tile: #f3f4f3;
   --color-tile-hover: #ebedeb;
   --color-mount: #e3e6e4;
+  /* The edge drawn around a phone recording that fills its frame */
+  --color-hairline: rgb(0 0 0 / 0.1);
   --color-pill: white;
   /* The contact block at the end */
   --color-panel: rgb(0 0 0 / 0.95);
@@ -46,6 +48,7 @@
   --color-tile: #18191a;
   --color-tile-hover: #1f2022;
   --color-mount: #242527;
+  --color-hairline: rgb(255 255 255 / 0.12);
   --color-pill: #26272a;
   --color-panel: #1d1e20;
 }
@@ -72,6 +75,24 @@ body {
   from {
     opacity: 0;
     transform: translateY(32px);
+  }
+}
+
+/* On phones a recording fills its frame, so a site with a pale grey page
+   (Margate Arts Club) would melt into the tile. A hairline drawn over the
+   video keeps the edge, whatever the site's colours. */
+@media (width < 48rem) {
+  .media-edge {
+    position: relative;
+  }
+
+  .media-edge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px var(--color-hairline);
+    pointer-events: none;
   }
 }
 

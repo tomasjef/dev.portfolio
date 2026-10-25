@@ -21,7 +21,7 @@ export function ProjectCard({ project }: { project: Project }) {
       {...external}
       className={`reveal ${tile} group flex flex-col p-2 transition duration-300 ease-out hover:-translate-y-2 hover:bg-tile-hover hover:shadow-[0_2px_4px_rgb(0_0_0/0.06),0_36px_64px_-22px_rgb(0_0_0/0.42)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent`}
     >
-      <div className={`${mount} overflow-hidden ${phone ? "md:p-[6%]" : "p-[6%]"}`}>
+      <div className={`${mount} overflow-hidden ${phone ? "media-edge md:p-[6%]" : "p-[6%]"}`}>
         {phone && (
           <LoopVideo
             src={phone.video}
