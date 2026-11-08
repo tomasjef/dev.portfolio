@@ -24,7 +24,7 @@ export const projects: Project[] = [
     url: "https://margatearts.club/",
     meta: "Solo design & build, 2026",
     summary:
-      "A venue website that runs itself. Events are read live from the OutSavvy ticketing API, so the homepage updates as promoters add or sell out shows. Weekly and monthly newsletters are built from the same events and sent automatically through Amazon SES, with new subscribers, including ticket buyers who opt in, added automatically so the club never has to lift a finger. Every page, photo and opening time is edited in a custom-built Sanity CMS.",
+      "A venue website that runs itself. Events are read live from the OutSavvy ticketing API, so the homepage updates as promoters add or sell out shows. Weekly and monthly newsletters are built from the same events and sent automatically through Amazon SES, with new subscribers, including ticket buyers who opt in, added automatically so the club never has to lift a finger. A custom Sanity admin gives the club full control of every page’s content.",
     stack: [
       "Next.js",
       "TypeScript",
