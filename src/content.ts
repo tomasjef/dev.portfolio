@@ -44,7 +44,7 @@ export const projects: Project[] = [
     url: "https://margate-electronics.org/",
     meta: "Solo design & build, 2026",
     summary:
-      "Archival catalogue website for an electronic music label, with API-synced inventory, automated audio previews and a custom Avo CMS, deployed via CI/CD.",
+      "Archival catalogue website for an electronic music label. Stock is synced from the Bandcamp API, releases play automated audio previews, and an archive indexes every event and artist, with a shuffled Play All, Add to Calendar and an Atom feed. Content is managed in a custom Avo admin and published as a static site on Cloudflare Pages through CI/CD.",
     stack: [
       "Ruby on Rails",
       "Hotwire",
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     url: "https://ai-fintech-chatbot-bc425b8ff60c.herokuapp.com/",
     meta: "Solo design & build, 2026",
     summary:
-      "AI support chatbot for a fictional digital bank, using RAG to ground answers in uploaded PDFs, with clickable source links.",
+      "AI support assistant for a fictional UK digital bank. An admin uploads PDFs, which are parsed, chunked and embedded into a pgvector knowledge base. Answers use RAG, stay within what the documents say and link to the source PDF, with follow-up context and request rate limiting.",
     stack: [
       "Ruby on Rails",
       "Hotwire",
@@ -84,11 +84,12 @@ export const projects: Project[] = [
     url: "https://plant-match-01fac0858f9a.herokuapp.com/",
     meta: "Le Wagon, 2026",
     summary:
-      "Houseplant matching app using a questionnaire and plant data API, with an AI care chatbot. Built as a team of four in a one-week bootcamp sprint.",
+      "Houseplant matching app. A short questionnaire on space, care habits and preferences returns matches from the Perenual plant API, which signed-in users can save as favourites, and each plant has its own AI care chatbot. Built as a team of four in a one-week bootcamp sprint.",
     stack: [
       "Ruby on Rails",
       "PostgreSQL",
       "JavaScript (Stimulus)",
+      "Devise",
       "SCSS",
       "Perenual API",
       "RubyLLM",
