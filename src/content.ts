@@ -20,6 +20,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Margate Arts Club",
+    url: "https://margatearts.club/",
+    meta: "Solo design & build, 2026",
+    summary:
+      "A venue website that runs itself. Events are read live from the OutSavvy ticketing API, so the homepage updates as promoters add or sell out shows. Weekly and monthly newsletters are built from the same events and sent automatically through Amazon SES, with sign-ups, ticket buyers who opt in, unsubscribes and bounces all handled without the club lifting a finger. Every page, photo and opening time is edited in a custom-built Sanity CMS.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Sanity",
+      "OutSavvy API",
+      "Amazon SES",
+      "Cloudflare Workers",
+      "Figma",
+      "Claude Code",
+    ],
+    image: "/projects/margate-arts-club.webp",
+    video: "/projects/margate-arts-club.mp4",
+    phone: { video: "/projects/margate-arts-club-phone.mp4", image: "/projects/margate-arts-club-phone.webp" },
+  },
+  {
     name: "Margate Electronics",
     url: "https://margate-electronics.org/",
     meta: "Solo design & build, 2026",
@@ -77,26 +97,6 @@ export const projects: Project[] = [
     image: "/projects/plant-match.webp",
     video: "/projects/plant-match.mp4",
     phone: { video: "/projects/plant-match-phone.mp4", image: "/projects/plant-match-phone.webp" },
-  },
-  {
-    name: "Margate Arts Club",
-    url: "https://new.margatearts.club/",
-    meta: "Solo design & build, 2026",
-    summary:
-      "Website for a music and arts venue in Margate, with events pulled live from the OutSavvy API, pages and opening hours the club edits in Sanity, and weekly and monthly event newsletters sent automatically through Amazon SES.",
-    stack: [
-      "Next.js",
-      "TypeScript",
-      "Sanity",
-      "OutSavvy API",
-      "Amazon SES",
-      "Cloudflare Workers",
-      "Figma",
-      "Claude Code",
-    ],
-    image: "/projects/margate-arts-club.webp",
-    video: "/projects/margate-arts-club.mp4",
-    phone: { video: "/projects/margate-arts-club-phone.mp4", image: "/projects/margate-arts-club-phone.webp" },
   },
 ];
 

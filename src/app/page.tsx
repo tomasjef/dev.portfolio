@@ -31,7 +31,7 @@ export default function Home() {
               phones the two parts stack and the · between them is dropped */}
           <p className={`${small} mb-6 flex flex-wrap items-center gap-x-2 gap-y-1`}>
             <span className="inline-flex items-center gap-3 whitespace-nowrap text-ink">
-              <span className="ml-1 size-2 rounded-full bg-accent-text ring-4 ring-accent-text/20" />
+              <span className="status-dot ml-1 size-2 rounded-full bg-accent-text ring-4 ring-accent-text/20" />
               {status}
             </span>
             <span aria-hidden className="hidden sm:inline">·</span>
@@ -68,8 +68,7 @@ export default function Home() {
         <section id="contact" className={`${shell} mt-4 scroll-mt-6 md:mt-5`}>
           <div className="reveal flex flex-col gap-8 rounded-[20px] bg-panel p-6 text-white md:p-10 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="text-[14px] tracking-[0.01em] text-white/60">Got a project or a role in mind?</p>
-              <p className={`${display} mt-2`}>Let&rsquo;s chat</p>
+              <p className={display}>Let&rsquo;s chat</p>
             </div>
             {/* On phones Get in touch has the first line to itself */}
             <div className="flex flex-wrap gap-2">
