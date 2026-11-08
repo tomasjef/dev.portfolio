@@ -6,15 +6,16 @@ import { external, mount, pill, small, tile } from "./styles";
 // "Solo design & build, 2026" → "Solo design & build": the year is in the section label
 const creditOf = (meta: string) => meta.replace(/,?\s*\d{4}$/, "");
 
-// The whole card is the link: on hover it lifts, the recording zooms a touch
-// inside its frame, the arrow by the title moves out and the title and stack
-// turn the accent colour. The recording fills its frame edge to edge (the
-// frame takes the recording's own shape, so none of it is cut off). Phones have
-// no hover, so there the desktop recording gives way to a recording of the
-// site's phone layout, which fills the frame the same way.
+// The whole card is the link: on hover it lifts, the arrow by the title moves
+// out and the title and stack turn the accent colour, and on a desktop the
+// still image starts playing as the recording (it never zooms, so none of the
+// design is hidden). The recording fills its frame edge to edge (the frame takes
+// the recording's own shape, so none of it is cut off). Phones have no hover,
+// so there the desktop recording gives way to a recording of the site's phone
+// layout, which plays while on screen and fills the frame the same way.
 export function ProjectCard({ project }: { project: Project }) {
   const { phone } = project;
-  const mediaClass = `block aspect-[1360/752] h-auto w-full object-cover object-top transition duration-500 ease-out group-hover:scale-[1.045] ${phone ? "max-md:hidden" : ""}`;
+  const mediaClass = `block aspect-[1360/752] h-auto w-full object-cover object-top ${phone ? "max-md:hidden" : ""}`;
 
   return (
     <a
@@ -33,7 +34,7 @@ export function ProjectCard({ project }: { project: Project }) {
           />
         )}
         {project.video ? (
-          <LoopVideo src={project.video} poster={project.image} className={mediaClass} />
+          <LoopVideo src={project.video} poster={project.image} className={mediaClass} hoverPlay />
         ) : (
           <Image src={project.image} alt="" width={680} height={376} className={mediaClass} />
         )}

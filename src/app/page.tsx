@@ -66,7 +66,7 @@ export default function Home() {
         {hasCv && <CvTile />}
 
         <section id="contact" className={`${shell} mt-4 scroll-mt-6 md:mt-5`}>
-          <div className="reveal flex flex-col gap-8 rounded-[20px] bg-panel p-6 text-white md:p-10 lg:flex-row lg:items-end lg:justify-between">
+          <div className="reveal flex flex-col gap-8 rounded-[20px] bg-panel p-6 text-white md:p-10 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <p className={display}>Let&rsquo;s chat</p>
             </div>
