@@ -35,9 +35,9 @@ export const projects: Project[] = [
       "Figma",
       "Claude Code",
     ],
-    image: "/projects/margate-arts-club.webp",
-    video: "/projects/margate-arts-club.mp4",
-    phone: { video: "/projects/margate-arts-club-phone.mp4", image: "/projects/margate-arts-club-phone.webp" },
+    image: "/projects/margate-arts-club.webp?v=20261108",
+    video: "/projects/margate-arts-club.mp4?v=20261108",
+    phone: { video: "/projects/margate-arts-club-phone.mp4?v=20261108", image: "/projects/margate-arts-club-phone.webp?v=20261108" },
   },
   {
     name: "Margate Electronics",
