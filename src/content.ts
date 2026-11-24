@@ -44,7 +44,7 @@ export const projects: Project[] = [
     url: "https://margate-electronics.org/",
     meta: "Solo design & build, 2026",
     summary:
-      "Website and shop for an electronic music label and event series. Releases play audio previews, an archive indexes every event and artist, and Bandcamp stock stays in sync. Visitors buy tickets and merch through an on-site checkout with Google Pay and cards. Tickets arrive by email as PDFs with QR codes and Google Wallet passes, and a phone door scanner keeps working without signal. A built-in newsletter editor handles sending, and a custom CMS manages every page.",
+      "Website, shop and ticketing for an electronic music label and event series, all custom built with no off-the-shelf platforms. The checkout takes Google Pay and cards through Stripe, and every order generates its receipt and QR code tickets automatically, with Google Wallet passes. A phone door scanner keeps working without signal. The newsletter is built, scheduled and sent from inside the CMS. Releases play audio previews, an archive indexes every event and artist, and Bandcamp stock stays in sync.",
     stack: [
       "Next.js",
       "Payload CMS",
